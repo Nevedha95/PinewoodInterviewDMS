@@ -1,0 +1,59 @@
+﻿@model PinewoodDmsMVC.Models.Dealer
+
+@{
+    ViewData["Title"] = "Edit Dealer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Render any validation summary errors -->
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+
+    <!-- Hidden field for the ID of the dealer -->
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Name">Dealer Name</label>
+        <input type="text" class="form-control" id="Name" asp-for="Name" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" class="form-control" id="Location" asp-for="Location" required />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" id="Email" asp-for="Email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Contact">Contact</label>
+        <input type="text" class="form-control" id="Contact" asp-for="ContactNumber" required />
+        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Dealer</button>
+</form>
+
+<!-- Include validation scripts for client-side validation -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

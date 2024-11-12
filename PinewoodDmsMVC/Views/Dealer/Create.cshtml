@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PinewoodDmsMVC.Models.Dealer>
+
+@{
+    ViewData["Title"] = "Create New Dealer";
+}
+
+<h2>Create New Dealer</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Name">Dealer Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" class="form-control" id="Location" name="Location" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" id="Email" name="Email" required />
+    </div>                                                              
+    <div class="form-group">
+        <label for="ContactNumber">ContactNumber</label>
+        <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" required />
+    </div>
+    
+   
+  
+    <button type="submit" class="btn btn-primary">Add Dealer</button>
+  
+</form>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinewoodDmsApi", "PinewoodDmsApi.csproj", "{8FBBB890-0915-4C91-A1A7-B51F1E781E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinewoodDmsMVC", "..\PinewoodDmsMVC\PinewoodDmsMVC.csproj", "{D4EC03DC-4C66-499E-956B-866A18A5DAD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FBBB890-0915-4C91-A1A7-B51F1E781E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBBB890-0915-4C91-A1A7-B51F1E781E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBBB890-0915-4C91-A1A7-B51F1E781E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBBB890-0915-4C91-A1A7-B51F1E781E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EC03DC-4C66-499E-956B-866A18A5DAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EC03DC-4C66-499E-956B-866A18A5DAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EC03DC-4C66-499E-956B-866A18A5DAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EC03DC-4C66-499E-956B-866A18A5DAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6C2ADBB-FD17-4C92-AF59-30A2E7577260}
+	EndGlobalSection
+EndGlobal

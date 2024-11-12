@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PinewoodDmsMVC.Models.Vehicle>
+
+<h2>Vehicle Inventory d</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>VIN</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Mileage</th>
+            <th>Price</th>
+            <th>Transmission</th>
+            <th>Fuel Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>@vehicle.VIN</td>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Model</td>
+                <td>@vehicle.Year</td>
+                <td>@vehicle.Color</td>
+                <td>@vehicle.Mileage</td>
+                <td>@vehicle.Price.ToString("C")</td>
+                <td>@vehicle.Transmission</td>
+                <td>@vehicle.FuelType</td>
+                <td>@vehicle.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

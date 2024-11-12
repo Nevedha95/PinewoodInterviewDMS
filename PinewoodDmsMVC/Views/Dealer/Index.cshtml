@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PinewoodDmsMVC.Models.Dealer>
+<h2>Dealer List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Actions</th>
+            <th>Vehicle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dealer in Model)
+        {
+            <tr>
+                <td>@dealer.Name</td>
+                <td>@dealer.Location</td>
+                <td>@dealer.ContactNumber</td>
+                <td>@dealer.Email</td>
+                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@dealer.Id">Edit</a> |
+                    <form asp-action="Delete" asp-route-id="@dealer.Id" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    @Html.ActionLink("Go to New Page", "Create", "Vehicle",new{dealerId=dealer.Id})
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Create New Dealer</a>
+
+
+
+
+
