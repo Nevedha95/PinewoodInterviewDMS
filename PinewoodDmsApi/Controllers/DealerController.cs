@@ -9,8 +9,11 @@ namespace PinewoodDmsApi.Controllers
     {
         private static List<Dealer> dealers = new List<Dealer>
         {
-            new Dealer { Id = 1, Name = "ABC Motors", Location = "1 oxford street", ContactNumber = "123-456-7890", Email = "Motors@gm.com" },
+            new Dealer { Id = 1, Name = "ABC Motors", Location = "1 oxford street", ContactNumber = "123-456-7890", Email = "Motors@gm.com" ,Vehicles=new List<Vehicle>{  new Vehicle { Id = 1, Make = "Toyota", Model = "Camry", Year = 2020 },
+                    new Vehicle { Id = 2, Make = "Honda", Model = "Accord", Year = 2019 },
+                    new Vehicle { Id = 3, Make = "Ford", Model = "Mustang", Year = 2021 }} },
             new Dealer { Id = 2, Name = "Coventry Auto", Location = "7 daber street", ContactNumber = "987-654-3210", Email = "coventry@gm.com" }
+
         };
 
         // GET: api/dealer
@@ -76,6 +79,15 @@ namespace PinewoodDmsApi.Controllers
 
             return NoContent();  // Returns 204 No Content on successful update
         }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteDealer(int id)
+        {
+            var dealer = dealers.FirstOrDefault(d => d.Id == id);
+            if (dealer == null) return NotFound();
+            dealers.Remove(dealer);
+            return NoContent();
+        }
 
+       
     }
 }

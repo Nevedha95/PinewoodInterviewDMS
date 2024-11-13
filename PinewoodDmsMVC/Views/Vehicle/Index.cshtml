@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<PinewoodDmsMVC.Models.Vehicle>
 
-<h2>Vehicle Inventory d</h2>
+<h2>Vehicle Inventory </h2>
 <table class="table">
     <thead>
         <tr>
@@ -33,4 +33,7 @@
             </tr>
         }
     </tbody>
+
 </table>
+@Html.ActionLink("Add More Vehicles", "Create", "Vehicle")
+

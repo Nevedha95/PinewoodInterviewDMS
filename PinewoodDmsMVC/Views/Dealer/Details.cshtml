@@ -1,0 +1,36 @@
+﻿@model Dealer
+
+<h2>Dealer Details</h2>
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Location:</strong> @Model.Location</p>
+<p><strong>Contact:</strong> @Model.ContactNumber</p>
+<p><strong>Email:</strong> @Model.Email</p>
+
+<h3>Vehicles</h3>
+@if (Model.Vehicles.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <tr>
+                    <td>@vehicle.Make</td>
+                    <td>@vehicle.Model</td>
+                    <td>@vehicle.Year</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No vehicles found for this dealer.</p>
+}
+@Html.ActionLink("Add More Vehicles", "Create", "Vehicle")

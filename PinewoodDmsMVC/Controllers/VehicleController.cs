@@ -20,11 +20,7 @@ namespace PinewoodDmsMVC.Controllers
 
             return View(response);
         }
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
-        // GET: Vehicle/Create
+       
         public ActionResult Create(int dealerId)
         {
             var vehicle = new Vehicle

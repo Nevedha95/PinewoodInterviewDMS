@@ -7,7 +7,8 @@
         public string Location { get; set; }  // Location of the dealer
         public string ContactNumber { get; set; } // Dealer's contact number
         public string Email { get; set; }
-       // public List<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
+        public List<Vehicle> Vehicles { get; set; }
+        // public List<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
     }
     
 }

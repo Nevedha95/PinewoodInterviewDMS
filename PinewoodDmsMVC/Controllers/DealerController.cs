@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PinewoodDmsMVC.Models;
+using System.Net.Http.Json;
 
 namespace PinewoodDmsMVC.Controllers
 {
     public class DealerController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private const string ApiUrl = "https://localhost:5033/api/Dealer";  // Replace with the actual API URL
+        private const string ApiUrl = "https://localhost:5033/api/Dealer"; 
 
         public DealerController(IHttpClientFactory httpClientFactory)
         {
@@ -38,20 +39,20 @@ namespace PinewoodDmsMVC.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index");  // Redirect to Index if the POST is successful
+                    return RedirectToAction("Index");  
                 }
             }
-            return View(dealer);  // Return the same view if there is an error or validation fails
+            return View(dealer); 
         }
 
         // GET: DealerMvc/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
             var httpClient = _httpClientFactory.CreateClient();
-            var response = await httpClient.GetStringAsync($"{ApiUrl}/{id}");  // Get dealer details from the API
+            var response = await httpClient.GetStringAsync($"{ApiUrl}/{id}"); 
             var dealer = JsonConvert.DeserializeObject<Dealer>(response);  // Deserialize the response into a Dealer object
 
-            return View(dealer);  // Pass the dealer data to the Edit view
+            return View(dealer);  
         }
         // POST: DealerMvc/Edit/5
         [HttpPost]
@@ -60,14 +61,28 @@ namespace PinewoodDmsMVC.Controllers
             if (ModelState.IsValid)
             {
                 var httpClient = _httpClientFactory.CreateClient();
-                var response = await httpClient.PutAsJsonAsync($"{ApiUrl}/{id}", dealer);  // PUT the updated dealer to the API
-
+                var response = await httpClient.PutAsJsonAsync($"{ApiUrl}/{id}", dealer);  
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index");  // Redirect to Index if the PUT is successful
+                    return RedirectToAction("Index");  
                 }
             }
-            return View(dealer);  // Return the same view if there is an error or validation fails
+            return View(dealer);  
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            var httpClient = _httpClientFactory.CreateClient("DealerClient");
+            await httpClient.DeleteAsync($"{ApiUrl}/{id}");
+            return RedirectToAction("Index");
+        }
+
+        // GET: /Dealer/Details/5
+        public async Task<IActionResult> Details(int id)
+        {
+            var httpClient = _httpClientFactory.CreateClient();
+            var dealer = await httpClient.GetFromJsonAsync<Dealer>($"{ApiUrl}/{id}");
+
+            return View(dealer);
         }
     }
 }
