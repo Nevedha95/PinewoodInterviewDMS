@@ -7,11 +7,7 @@ namespace PinewoodDmsApi.Controllers
     [ApiController]
     public class VehicleController : Controller
     {
-        //private static List<Dealer> dealers = new List<Dealer>
-        //{
-        //    new Dealer { Id = 1, Name = "Dealer One", Location = "New York" },
-        //    new Dealer { Id = 2, Name = "Dealer Two", Location = "Los Angeles" }
-        //};
+       
 
         private static List<Vehicle> vehicles = new List<Vehicle>
         {
@@ -100,7 +96,7 @@ namespace PinewoodDmsApi.Controllers
         {
             if (vehicle == null)
             {
-                return BadRequest("Dealer data is invalid.");
+                return BadRequest("Vehicle data is invalid.");
             }
             // Simulate adding a new dealer with hardcoded ID
 

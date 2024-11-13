@@ -2,12 +2,12 @@
 {
     public class Dealer
     {
-        public int Id { get; set; }           // Unique identifier for the dealer
-        public string Name { get; set; }      // Name of the dealer
-        public string Location { get; set; }  // Location of the dealer
-        public string ContactNumber { get; set; } // Dealer's contact number
+        public int Id { get; set; }          
+        public string Name { get; set; }      
+        public string Location { get; set; } 
+        public string ContactNumber { get; set; } 
         public string Email { get; set; }
-        public List<Vehicle> Vehicles { get; set; }
+        public List<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
         // public List<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
     }
     

@@ -9,7 +9,7 @@ namespace PinewoodDmsApi.Models
         public int VehicleId { get; set; }
 
 
-        public string VIN { get; set; }  // Vehicle Identification Number
+        public string VIN { get; set; }  
 
 
         public string Make { get; set; }
@@ -30,13 +30,13 @@ namespace PinewoodDmsApi.Models
         public decimal Price { get; set; }
 
 
-        public string Transmission { get; set; } // e.g., Automatic, Manual
+        public string Transmission { get; set; } 
 
 
-        public string FuelType { get; set; } // e.g., Gasoline, Diesel, Electric
+        public string FuelType { get; set; } 
 
 
-        public string Description { get; set; }
+        public string Description  { get; set; }
         [ForeignKey("Dealer")]
         public int Id { get; set; }
 

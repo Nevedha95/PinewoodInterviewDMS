@@ -40,7 +40,7 @@ namespace PinewoodDmsMVC.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("ListByDealer", new { dealerId = vehicle.Id });
+                    return RedirectToAction("Index", new { dealerId = vehicle.Id });
                 }
             }
             return View(vehicle);  // Return the same view if there is an error or validation fails
